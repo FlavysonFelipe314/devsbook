@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwiperJS Carrossel</title>
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <style>
+      /* Estilo do carrossel */
+      .swiper-container {
+        width: 100%;
+        height: 300px;
+        margin: auto;
+        position: relative;
+      }
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        background: black;
+        color: #fff;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #fff;
+      }
+
+      .swiper-pagination {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Estrutura do carrossel -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 4</div>
+      </div>
+      <!-- Paginação -->
+      <div class="swiper-pagination"></div>
+      <!-- Botões de Navegação -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <button class="toinl">l</button>
+    <button class="toinr">r</button>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      // Inicializar o SwiperJS
+      const swiper = new Swiper(".swiper-container", {
+        loop: true, // Ativa o looping
+        navigation: {
+          nextEl: ".toinr", // Botão para próximo slide
+          prevEl: ".toinl", // Botão para slide anterior
+        },
+        pagination: {
+          el: ".swiper-pagination", // Ativa a paginação
+          clickable: true, // Torna os pontos clicáveis
+        },
+        autoplay: {
+          delay: 3000, // Tempo entre os slides (3 segundos)
+          disableOnInteraction: false, // Continua após interação
+        },
+        slidesPerView: 3, // Mostra 1 slide por vez
+        spaceBetween: 10, // Espaçamento entre os slides
+      });
+    </script>
+  </body>
+</html>
